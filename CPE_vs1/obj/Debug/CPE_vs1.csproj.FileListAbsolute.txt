@@ -1,0 +1,157 @@
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\CPE_vs1.exe.config
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.csprojResolveAssemblyReference.cache
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.ChangePass.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.CPECatalogueInventorize.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.CPECategory.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.CPELoan.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.CPEReturn.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.FormMain.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.LocationDetail.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.LocationManagement.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.Login.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.PackageManagement.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.PackagePenalty.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.Properties.Resources.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.Report.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.SiteManagement.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.StaffManagement.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.ViewReport.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.csproj.GenerateResource.Cache
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.exe.licenses
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\CPE_vs1.exe
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\CPE_vs1.pdb
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\BAL.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\EntityFramework.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\Microsoft.CSharp.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\Models.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Data.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Deployment.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Drawing.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Security.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Windows.Forms.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\System.Xml.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\DAL.dll
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\BAL.pdb
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\Models.pdb
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\EntityFramework.xml
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\bin\Debug\DAL.pdb
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.exe
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.pdb
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.ReportViewer.CPEInventory.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.ReportViewer.CPELoanTransactionRecord.resources
+C:\Users\LAPTOP PC\Desktop\nguyen duy linh\CPE_vs1\CPE_vs1\obj\Debug\CPE_vs1.ReportViewer.CPEAmount.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\CPE_vs1.exe.config
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\CPE_vs1.exe
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\CPE_vs1.pdb
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\DAL.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\EntityFramework.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\Microsoft.CSharp.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\Models.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Data.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Deployment.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Drawing.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Security.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Windows.Forms.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\System.Xml.dll
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\DAL.pdb
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\Models.pdb
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\EntityFramework.xml
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.csprojResolveAssemblyReference.cache
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Agent.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.ChangePass.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.CheckOutRept.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPECatalogueInventorize.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPECategory.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPELoan.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPELoanOnline.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Form.CPELoanReceipt.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPEReturn.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.CreditCard.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Customer_Managent.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.FormMain.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.LocationDetail.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.LocationManagement.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Login.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.PackageManagement.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.PenaltyManagement.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Promotion.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.SiteManager.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Properties.Resources.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Report.DeviceTransactions.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Report.ReportCPE.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.SiteManagement.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.StaffManagement.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Transfer.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.UpdateCustomer.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.csproj.GenerateResource.Cache
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.exe.licenses
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.exe
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.pdb
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\CPE_vs1.exe.config
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.exe
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.pdb
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.csprojResolveAssemblyReference.cache
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Agent.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.ChangePass.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.CheckOutRept.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPECatalogueInventorize.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPECategory.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPELoan.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPELoanOnline.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Form.CPELoanReceipt.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.CPEReturn.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.CreditCard.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Customer_Managent.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.FormMain.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.LocationDetail.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.LocationManagement.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Login.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.PackageManagement.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.PenaltyManagement.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Promotion.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.SiteManager.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Properties.Resources.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Report.DeviceTransactions.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Report.ReportCPE.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.SiteManagement.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.StaffManagement.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Transfer.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.UpdateCustomer.resources
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.csproj.GenerateResource.Cache
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.exe.licenses
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\CPE_vs1.exe
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\CPE_vs1.pdb
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\DAL.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\EntityFramework.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\Microsoft.CSharp.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\Models.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Data.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Deployment.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Drawing.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Security.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Windows.Forms.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\System.Xml.dll
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\DAL.pdb
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\Models.pdb
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\EntityFramework.xml
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LAPTOP PC\Desktop\HoangHai\CPE\Source\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.CPELoanNew.resources
+C:\Users\HA BUI\Desktop\duy linh\CPE\CPE_vs1\obj\Debug\CPE_vs1.Forms.CPELoanNew.resources

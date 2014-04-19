@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CPEModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DBContextCPEDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Agents" EntityType="CPEModel.Agent" />
+    <EntitySet Name="CPEs" EntityType="CPEModel.CPE" />
+    <EntitySet Name="CPEGlobals" EntityType="CPEModel.CPEGlobal" />
+    <EntitySet Name="CPELocations" EntityType="CPEModel.CPELocation" />
+    <EntitySet Name="LoanDetails" EntityType="CPEModel.LoanDetail" />
+    <EntitySet Name="Locations" EntityType="CPEModel.Location" />
+    <EntitySet Name="Packages" EntityType="CPEModel.Package" />
+    <EntitySet Name="Penalties" EntityType="CPEModel.Penalty" />
+    <EntitySet Name="Promotions" EntityType="CPEModel.Promotion" />
+    <EntitySet Name="Sites" EntityType="CPEModel.Site" />
+    <EntitySet Name="Staffs" EntityType="CPEModel.Staff" />
+    <EntitySet Name="TrackLoans" EntityType="CPEModel.TrackLoan" />
+    <EntitySet Name="TrackLogs" EntityType="CPEModel.TrackLog" />
+    <EntitySet Name="Customers" EntityType="CPEModel.Customer" />
+    <EntitySet Name="Loans" EntityType="CPEModel.Loan" />
+    <AssociationSet Name="FK_LoanDetail_Loan" Association="CPEModel.FK_LoanDetail_Loan">
+      <End Role="Loan" EntitySet="Loans" />
+      <End Role="LoanDetail" EntitySet="LoanDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CPECategory_ID" Type="Int32" />
+    <Property Name="SIMNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToSite" Type="Int32" />
+    <Property Name="CodeTransfer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FromSite" Type="Int32" />
+    <Property Name="CheckOutDate" Type="DateTime" Precision="3" />
+    <Property Name="CheckInDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPEGlobal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Single" />
+    <Property Name="Deposit" Type="Single" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPELocation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CPE_ID" Type="Int32" />
+    <Property Name="Location_ID" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LoanDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Loan_ID" Type="Int32" />
+    <Property Name="RentDay" Type="Int32" />
+    <Property Name="PenaltyAmount" Type="Single" />
+    <Property Name="LoanDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="RentAmount" Type="Single" />
+    <Property Name="Deposit" Type="Single" />
+    <Property Name="SiteLoan_ID" Type="Int32" />
+    <Property Name="SiteReturn_ID" Type="Int32" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="CPE_ID" Type="Int32" />
+    <Property Name="PromotionDisCount" Type="Int32" />
+    <Property Name="AgentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Loan" Relationship="CPEModel.FK_LoanDetail_Loan" FromRole="LoanDetail" ToRole="Loan" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EOM" Type="Byte" />
+    <Property Name="Price" Type="Single" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Penalty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Single" />
+    <Property Name="Percents" Type="Int32" />
+    <Property Name="StatusCPE" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Promotion">
+    <Key>
+      <PropertyRef Name="PromotionCode" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="PromotionCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Byte" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountType" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TrackLoan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanDetail_ID" Type="Int32" />
+    <Property Name="Package_ID" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TrackLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeAction" Type="DateTime" Precision="3" />
+    <Property Name="Staff_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Expiry_date" Type="DateTime" Precision="3" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="DrivingLisence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IDLisence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Loan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="Int32" />
+    <Property Name="Staff_ID" Type="Int32" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="Modified_By" Type="Int32" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CustomerCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerBarcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoanSiteID" Type="Int32" />
+    <Property Name="Delivery" Type="Single" />
+    <Property Name="DeliveryAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RentalPrice" Type="Single" />
+    <Property Name="OnlineDiscount" Type="Single" />
+    <Property Name="OnlineDiscountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubTotal" Type="Single" />
+    <Property Name="CreditCardNumer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExpiredateCreditCard" Type="DateTime" Precision="3" />
+    <Property Name="NameOnCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BookedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LoanDetails" Relationship="CPEModel.FK_LoanDetail_Loan" FromRole="Loan" ToRole="LoanDetail" />
+  </EntityType>
+  <Association Name="FK_LoanDetail_Loan">
+    <End Type="CPEModel.Loan" Role="Loan" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CPEModel.LoanDetail" Role="LoanDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoanDetail">
+        <PropertyRef Name="Loan_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

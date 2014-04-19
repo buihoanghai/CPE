@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<script type="text/javascript">
+    function _LoginCustomer() {
+        var username = $('#Username').val();
+        var password = $('#Password').val();
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("Login","Home")',
+            data: { Username:username, Password:password },
+            success: function (data) {
+                success(data);
+            },
+            complete: function (data) { success(data); }
+        });
+
+    }
+    function success(data) {
+        if (data == "") {
+            alert("Wrong Username or Password!");
+        }
+        else {
+            window.location.href = '@Url.Action("Index","Loan")';
+        }
+    }
+</script>
+
+<section class="inner-banner" style="height: 300px; background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;">
+    <div class="content">
+        <h1>TRAVEL THE WAY<br> YOU WANT IT<br> TO BE</h1>
+    </div>
+</section>
+<section class="inner-main clearfix">
+    <div class="content  clearfix">
+        <div class="inner-left">
+            <h1>PAGE TITLE</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="sidebar-inner clearfix">
+
+            <div class="form">
+@if (CPEWeb.Class.PublicClass._customerCur.ID == 0) {
+                <h3 class="login">LOGIN</h3>
+                <h3 class="register">REGISTER</h3>
+                <div class="user-icon"></div><input id="Username" name="Username" type="text" placeholder="Enter Username or Email Address" class="email">
+                <div class="pass-icon"></div><input id="Password" name="Password" type="password" placeholder="Enter Password" class="password">
+                <input type="button" onclick="_LoginCustomer();" id="butLogIn" value="SUBMIT" class="submit">
+}
+                <img src="@Url.Content("~/Content/Template/images/pc.png")">
+            </div>
+            <div class="affiliates">
+                <h3>AFFILIATES AND PARTNERS</h3>
+                <img src="@Url.Content("~/Content/Template/images/tiger.png")">
+                <img src="@Url.Content("~/Content/Template/images/air-asia.png")">
+                <img src="@Url.Content("~/Content/Template/images/singapore.png")">
+            </div>
+
+            <div class="articles">
+                <h3>NEWS AND PROMOTIONS</h3>
+                <ul>
+                    <li>
+                        <a href="#"><h4>Travelers Wifi Coming soon</h4></a>
+                        <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor...</p>
+                    </li>
+                    <li>
+                        <a href="#"><h4>Travelers Wifi Coming soon</h4></a>
+                        <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor...</p>
+                    </li>
+                    <li>
+                        <a href="#"><h4>Travelers Wifi Coming soon</h4></a>
+                        <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor...</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using DAL.Implement.CPE_vs1DAL
+@using CPEWeb.Class
+@{
+    ISitesDAL _DALSite = new SitesDAL();
+    List<Models.Site> _listAllSiteIndatabase = new List<Models.Site>();
+
+    List<SelectListItem> ListSite = new List<SelectListItem>();
+    _listAllSiteIndatabase = _DALSite.SelectAll();
+    string s = "<select id='Location' name='Location'>";
+    foreach (var item in _listAllSiteIndatabase)
+    {
+        ListSite.Add(new SelectListItem() { Text = item.Name, Value = item.ID.ToString() });
+        s += "<option value='" + item.ID + "'>" + item.Name + "</option>";
+    }
+    s += "</select>";
+    string href;
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        //var options = { content: $('#idpopupLogin') };
+        //$("#member-login").popup(options);
+
+        //var options1 = { content: $('#idpopupDelivery') };
+        //$("#delivery").popup(options1);
+
+        select = "@Html.Raw(s)";
+    });
+    function _selfReturn() {
+        var self = this;
+        self.DeviceQTY = $('#DeviceQTY').val();
+        self.Location = $('#Location').val();
+        self.PickDate = $('#PickDate').val();
+        self.ReturnDate = $('#ReturnDate').val();
+        self.PromotionCode = $('#PromotionCode').val();
+        self.AgentCode = $('#AgentCode').val();
+    }
+    function _SelfReturn() {
+        var request = new _selfReturn();
+        $.ajax({
+            dateType: 'json',
+            contentType: 'application/json',
+            type: "POST",
+            url: '@Url.Action("SelfReturn", "LoanCPE")',
+            data: JSON.stringify(request),
+            success: function (data) {
+                $('#self-collect').magnificPopup('close');
+            }
+        });
+    }
+    function _delivery() {
+        var delivery = this;
+        delivery.DeviceQTY = $('#DeviceQTY').val();
+        delivery.DeliveryDate = $('#DeliveryDate').val();
+        delivery.DeliveryTime = $('#DeliveryTime').val();
+        delivery.ReturnDate = $('#ReturnDate').val();
+        delivery.ReturnTime = $('#ReturnTime').val();
+        delivery.BookedName = $('#BookedName').val();
+        delivery.DeliveryAddress = $('#DeliveryAddress').val();
+        delivery.PromotionCode = $('#PromotionCode').val();
+        delivery.AgentCode = $('#AgentCode').val();
+    }
+    function _Delivery() {
+        var request = new _delivery();
+        $.ajax({
+            dateType: 'json',
+            contentType: 'application/json',
+            type: "POST",
+            url: '@Url.Action("Delivery", "LoanCPE")',
+            data: JSON.stringify(request),
+            success: function (data) {
+                $('#delivery').magnificPopup('close');
+            }
+        });
+    }
+    function _LoginCustomer() {
+        var username = $('#Username').val();
+        var password = $('#Password').val();
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("Login","Home")',
+            data: { Username: username, Password: password },
+            success: function (data) {
+
+                success(data);
+            }
+        });
+
+    }
+    function success(data) {
+        var href = '';
+        if (data == "Fail") {
+            alert("Wrong Username or Password!");
+        }
+        else {
+            if(data=="Delivery"){
+                href = '@Url.Action("DeliveryPayment","LoanCPE")';
+            }
+            else if (data="Self")
+            {
+                href = '@Url.Action("SelfPayment", "LoanCPE")';
+            }
+            window.location.href = href;
+        }
+    }
+
+    function _guestLogin() {
+        window.location.href = '@Url.Action("InnerCustomer","LoanCPE")';
+    }
+</script>
+<section class="inner-banner" style="height: 300px; background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;">
+    <div class="content">
+        <h1>TRAVEL THE WAY<br> YOU WANT IT<br> TO BE</h1>
+    </div>
+</section>
+<section class="inner-main clearfix">
+    <div class="content clearfix" style="min-height:200px;">
+        <div class="rent-left">
+            <h1>Rent Now</h1>
+            <span class="orange">Online orders get 3% discount off 'Rental Price'</span>
+            <table style="float:left;" width="100%">
+                <tr>
+                    <td><strong>Rental Mode</strong></td>
+                    <td>
+                        <input type="radio" name="rad" value="Self-Collect" id="self-collect">
+                        <span class="opensans">Self-Collect & Return</span>
+                        <span class="opensans">
+                            <br>
+                            <input type="radio" name="rad" value="Delivery Request" id="delivery"><span class="opensans">Delivery Request</span>
+                    </td>
+                </tr>
+            </table>
+            <input onclick="_guestLogin();" id="guest-login" type="button" class="submit" value="GUEST LOGIN" style="float:left;margin-right:0;">
+            <input id="member-login" type="button" class="submit" value="MEMBER LOGIN" style="float:left;margin-right:0;margin-bottom:10px;">
+            <p style="float: left;width: 100%;">Not a member? <span class="orange">Join Now - It's free</span></p>
+            <a hre="#">
+                <ul id="cancel-res">
+                    <a href="#"><li>View</li></a>
+                    <a href="#"><li>Modify</li></a>
+                    <a href="#"><li>Cancel a Reservation</li></a>
+                </ul>
+            </a>
+        </div>
+        <div class="clearfix" style="margin-top:15px;">
+            <div class="rent-img float-left" style="background: url(@Url.Content("~/Content/Template/images/member-img-1.jpg"));">
+                <span class="t26px text">Liberate your</span>
+                <span class="t20px text">Travel Experience</span>
+                <ul>
+                    <li><p>No worry of phone bills</p></li>
+                    <li><p>No swapping sim card</p></li>
+                    <li><p>No searching for hotspots</p></li>
+                    <li><p>Pocket size device</p></li>
+                    <li><p>Unlimited Data ( Promotion )</p></li>
+                    <li><p>Stay Connected - anywhere , anytime</p></li>
+                </ul>
+            </div>
+            <div class="rent-img float-left" style="background: url(@Url.Content("~/Content/Template/images/member-img-2.jpg"));">
+                <br><br><br><br>
+                <span class="t35px text">4G LTE WIFI</span>
+                <span class="t15px text">Share and Save!</span>
+                <span class="t12px text">Family / Friends / Team</span>
+                <span class="t11px text">Connect up to 10 devices!</span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,205 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model Models.LoanInfo
+           @using DAL.Implement.CPE_vs1DAL
+@using Models
+           @{
+               ISitesDAL _DALSite = new SitesDAL();
+               Site _sitecur;
+               List<Site> _listAllSiteIndatabase = new List<Site>();
+               List<SelectListItem> DeviceQTY=new List<SelectListItem>();
+               for (int i = 1; i <= 10; i++)
+			    {
+                   DeviceQTY.Add(new SelectListItem(){Value=i.ToString(),Text=i.ToString()});
+                }
+               List<SelectListItem> ListSite = new List<SelectListItem>();
+               _listAllSiteIndatabase = _DALSite.SelectAll();
+               foreach (var item in _listAllSiteIndatabase)
+               {
+                   ListSite.Add(new SelectListItem() { Text = item.Name, Value = item.ID.ToString() });
+               }
+}
+
+<script type="text/javascript">
+    function _LoginCustomer() {
+        var username = $('#Username').val();
+        var password = $('#Password').val();
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("Login","Home")',
+            data: { Username:username, Password:password },
+            success: function (data) {
+                success(data);
+            }
+        });
+
+    }
+    function success(data) {
+        if (data == "") {
+            alert("Wrong Username or Password!");
+        }
+        else {
+            window.location.href = '@Url.Action("Index","Loan")';
+        }
+    }
+</script>
+
+
+        <section class="slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="img" style="background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;" />
+                        <div class="slideCapWrap clearfix">
+                            <div class="sliderCaption">
+                                <h1>TRAVEL THE WAY YOU WANT IT TO BE</h1>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img" style="background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;" />
+                        <div class="slideCapWrap clearfix">
+                            <div class="sliderCaption">
+                                <h1>TRAVEL THE WAY YOU WANT IT TO BE</h1>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="main clearfix">
+            <div class="content">
+                <div class="left">
+                    <h2>RENT NOW<span class="blue"></span></h2>
+                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</p>
+                    <h2>CPE <span class="blue">LOAN NOW</span></h2>
+                    <div class="form">
+                        @using (Html.BeginForm("Index", "Home",  FormMethod.Post))
+    {
+                            <table>
+                                <tr>
+                                    <td class="align-right">Device Quantity</td>
+                                    <td>
+                                        @Html.DropDownListFor(model=>model.DeviceQuantity,DeviceQTY)
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"></td>
+                                    <td>
+                                        @Html.ValidationMessageFor(m => m.DeviceQuantity)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right">Collection Location</td>
+                                    <td>
+                                        @Html.DropDownListFor(model => model.CollectionLocation, ListSite)
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"></td>
+                                    <td>
+                                        @Html.ValidationMessageFor(m => m.CollectionLocation)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right">Collection Date </td>
+                                    <td>
+                                        @*<input type="text" class="dateSelect">*@
+                                        @Html.TextBoxFor(model => model.CollectionDate, new { @class = "dateSelect" ,style="width: 150px;"})
+                                        
+                                    </td>
+                                    <td><div class="date-icon"></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"></td>
+                                    <td>
+                                        @Html.ValidationMessageFor(m => m.CollectionDate)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right">Return Date</td>
+                                    <td>
+                                        @*<input type="text" class="dateSelect">*@
+                                        @Html.TextBoxFor(model => model.ReturnDate, new { @class = "dateSelect", style = "width: 150px;" })
+                                        
+                                    </td>
+                                    <td><div class="date-icon"></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"></td>
+                                    <td>
+                                        @Html.ValidationMessageFor(m => m.ReturnDate)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right">Rental Mode</td>
+                                    <td>
+                                        @Html.RadioButtonFor(model => model.RentalMode, "Self-Collect & Return", new { @checked = "checked" })<span class="opensans">Self-Collect & Return</span>
+                                        @Html.TextBoxFor(model => model.Agent_Promotion_Code, new { @class = "code", placeholder = "T03523WX" })
+                                            <br>
+                                            @Html.RadioButtonFor(model => model.RentalMode, "Delivery", new { @checked = "checked" })
+                                            <span class="opensans">Delivery</span>
+                                        
+                                            @*<input type="radio" name="rad" checked value="Self-Collect">
+            <span class="opensans">Self-Collect & Return</span>
+            <input type="text" name="code" class="code" placeholder="T03523WX"><span class="opensans">
+                <br>
+                <input type="radio" name="rad" value="Delivery Request"><span class="opensans">Delivery</span>*@
+</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"></td>
+                                    <td>
+                                        @Html.ValidationMessageFor(m => m.RentalMode)
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="submit" value="SUBMIT" class="submit"><span class="note">* Minimum 3 Days Price Plan</span>
+                        }
+                    </div>
+                    <img src="~/Content/Template/images/iphone.png">
+                </div>
+
+                <div class="sidebar clearfix">
+                    @*@using (Html.BeginForm("Login", "Home",  FormMethod.Post))
+                    {*@
+                    <div class="form">
+                        <h3 class="login">LOGIN</h3>
+                        <h3 class="register">REGISTER</h3>
+                        <div class="user-icon"></div><input id="Username" name="Username" type="text" placeholder="Enter Username or Email Address" class="email">
+                        <div class="pass-icon"></div><input id="Password" name="Password" type="password" placeholder="Enter Password" class="password">
+                        <input type="button" onclick="_LoginCustomer();" id="butLogIn" value="SUBMIT" class="submit">
+                        <img src="~/Content/Template/images/pc.png">
+                    </div>
+                    @*  *@}
+                    <div class="affiliates">
+                        <h3>AFFILIATES AND PARTNERS</h3>
+                        <img src="~/Content/Template/images/tiger.png">
+                        <img src="~/Content/Template/images/air-asia.png">
+                        <img src="~/Content/Template/images/singapore.png">
+                    </div>
+
+                    <div class="articles">
+                        <h3>NEWS AND PROMOTIONS</h3>
+                        <ul>
+                            <li>
+                                <a href="#"><h4>Travelers Wifi Coming soon</h4></a>
+                                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>Travelers Wifi Coming soon</h4></a>
+                                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>Travelers Wifi Coming soon</h4></a>
+                                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor...</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>

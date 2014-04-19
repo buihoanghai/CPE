@@ -1,0 +1,43 @@
+﻿@model Models.Login
+@using (@Html.BeginForm("InnerCustomer", "Loan", FormMethod.Post))
+{
+    <div id="idpopupLogin" style="height:345px;display:none;">
+        <div class="white-popup login-popup">
+            <h1>Member Login</h1><div class="content clearfix">
+                <table style="float:left;font-size:12px;" width="100%">
+                    <tr>
+                        <td><strong>Username</strong></td>
+                        <td>
+                            @Html.TextAreaFor(m => m.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Password</strong></td>
+                        <td>
+                            @Html.TextAreaFor(m => m.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <input type="checkbox"><span style="font-size:10px;">
+
+                                Remember my Username & Password on this browser.<span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan=2>
+                            <center>Need help Signing In?<br><span class="orange">Forgot my password</span></center>
+                        </td>
+                    </tr>
+
+                    <tr><td colspan=2><center><input type="button" class="submit" value="GUEST LOGIN"></center></td></tr>
+
+                    <tr><td colspan=2><center>Not a Member?<br><span class="orange">Join now ( Free )</span></center></td></tr>
+
+                    <tr><td colspan=2><center><input onclick="_LoginCustomer();" type="button" class="submit" value="LOGIN"></center></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+}

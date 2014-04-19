@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources code="en">
+	<tag value="StatusCPE">
+		<enum value="0">Normal</enum>
+		<enum value="1">Lost</enum>		
+		<enum value="2">Faulty</enum>
+	</tag>
+</Resources>

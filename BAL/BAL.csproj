@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC461A43-C3A3-47C3-85DC-4A8A6EE0B784}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL</RootNamespace>
+    <AssemblyName>BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implement\CPE_vs1BAL\CPELocationsBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\CPEsBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\CustomersBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\LoanDetailsBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\LoansBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\LocationsBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\PackagesBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\PenaltysBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\SitesBAL.cs" />
+    <Compile Include="Implement\CPE_vs1BAL\StaffsBAL.cs" />
+    <Compile Include="Implement\PublicBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ICPELocationsBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ICPEsBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ICustomersBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ILoanDetailsBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ILoansBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ILocationsBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\IPackagesBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\IPenaltysBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\ISitesBAL.cs" />
+    <Compile Include="Interface\ICPE_vs1BAL\IStaffsBAL.cs" />
+    <Compile Include="Interface\IPublicBAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{3bb517f1-4067-4911-bee8-1d0a460a074e}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{e3fe11ed-afbd-4e09-8bab-57e9b2e9278f}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

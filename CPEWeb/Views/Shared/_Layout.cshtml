@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Traveler's Wifi</title>
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <link rel="stylesheet" href="~/Content/Template/style.css">
+    <link rel="stylesheet" href="~/Content/Template/fonts/opensans/stylesheet.css">
+    <link rel="stylesheet" href="~/Content/Template/fonts/opensans_extrabold/stylesheet.css">
+    <link rel="stylesheet" href="~/Content/Template/fonts/opensans_bold/stylesheet.css">
+    <link rel="stylesheet" href="~/Content/Template/css/ui-lightness/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="~/Content/Template/magnific-style.css">
+    <link rel="stylesheet" href="~/Content/Site.css">
+    @*<link rel="stylesheet" href="~/Content/popup.css">*@
+    <script src="~/Scripts/modernizr.js"></script>   
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @*<script src="~/Scripts/jquery.popup.min.js"></script>*@  
+</head>
+@using Microsoft.AspNet.Identity
+<body>
+    <section class="header">
+        <div class="content">
+            @Html.ActionLink(" ", "Index", "Home", new { @class="logo"})
+            @*<a href="index.html" class="logo"></a>*@
+            <div class="country">
+                <form>
+                    <select id="language" style="width:130px;">
+                        <option value="1" style="background-image: url(~/Content/Template/images/flags.jpg);">English</option>
+                        <option value="2">English</option>
+                        <option value="3">English</option>
+                    </select>
+                    <div class="flag" id="flag"></div>
+                </form>
+                @if (CPEWeb.Class.PublicClass._customerCur!=null && CPEWeb.Class.PublicClass._customerCur.ID != 0) { 
+                <div>Hi @User.Identity.GetUserName() | @Html.ActionLink("Logout", "Logout",  "Home" )</div>}
+            </div>
+            <nav class="menu">
+                <ul>
+                    <a href="@Url.Action("Index","Home")"><li class="selected">Home</li></a>
+                    <a href="@Url.Action("About","Home")"><li>About Us</li></a>
+                    <a href="@Url.Action("About","Home")"><li>Service Locations</li></a>
+                    <a href="@Url.Action("About","Home")"><li>Rental</li></a>
+                    <a href="@Url.Action("About","Home")"><li>Pricing & Charges</li></a>
+                    <a href="@Url.Action("About","Home")"><li>Partners</li></a>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    
+        @RenderBody()
+    
+    <section class="footer">
+        <div class="content">
+            <div class="left">
+                <!--
+                        <p>Traveler Wifi Pte Ltd<br>
+                        Aljunied Crescent, Singapore 380104<br>
+                        Phone: (65)3517 4686   Fax: (65) 3517 4681   Email: info@travelerswifi.com</p>
+
+                        <p>Copyright 2014 Travelers Wifi .VXG Pte Ltd</p>
+                -->
+                <h1>Service Support</h1>
+                <ul>
+                    <a href="#"><li>Customer Support</li></a>
+                    <a href="#"><li>FAQ</li></a>
+                </ul>
+            </div>
+
+            <div class="mid">
+                <h1>Follow us on</h1>
+                <p>
+                    <a href="#"><div class="fb"></div><span>Facebook</span></a>
+                    <a href="#"><div class="tw"></div><span>Twitter</span>
+                </p></a>
+            </div>
+
+            <div class="right">
+                <a href="#"><img src="~/Content/Template/images/footer-logo.png" style="float:right;"></a>
+                <ul>
+                    <a href="#"><li class="first">Site Map</li></a>
+                </ul>
+            </div>
+            <p class="copyright">Copyright &copy; 2014 Traveler WiFi Pte Ltd.  All Rights Reserved </p>
+        </div>
+    </section>
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+    <script src="~/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/jquery.flexslider.js"></script>
+    <script src="~/Scripts/mainjs.js"></script>
+    <script src="~/Scripts/popups.js"></script>
+    <script src="~/Scripts/jquery-barcode-last.min.js"></script>
+</body>
+
+</html>

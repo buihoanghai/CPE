@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7412c2882df496cbb16eb1f64a61bc4" Name="CPE">
+        <EntityTypeShape EntityType="CPEModel.Agent" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CPEModel.CPE" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CPEModel.CPEGlobal" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CPEModel.CPELocation" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CPEModel.LoanDetail" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="CPEModel.Location" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CPEModel.Package" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CPEModel.Penalty" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CPEModel.Promotion" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CPEModel.Site" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CPEModel.Staff" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CPEModel.TrackLoan" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CPEModel.TrackLog" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CPEModel.Customer" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="CPEModel.Loan" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="CPEModel.FK_LoanDetail_Loan" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

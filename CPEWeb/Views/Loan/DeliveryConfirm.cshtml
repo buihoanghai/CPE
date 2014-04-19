@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "Delivery Confirm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CPEWeb.Class
+@using DAL.Implement.CPE_vs1DAL
+@model Models.Register
+@{
+    ISitesDAL _DALSite = new SitesDAL();
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        _checkUsername();
+    });
+    function _checkUsername()
+    {
+        var username = $('#UserName').val();
+        if (username != null && username != "") {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("CheckUsername", "Loan")',
+                data: { Username: username },
+                success: function (data) {
+                    success(data);
+                }
+            });
+        }
+    }
+    var IsValid='false';
+    function success(data) {
+        if (data == "true") {
+            alert("Username already exist!");
+            IsValid = 'false';
+        }
+        else if(data=='false'){
+            IsValid = 'true';
+        }
+    }
+    function _onClickSubmit()
+    {
+        if (IsValid=='true')
+            return $('#idDeliveryForm').submit();
+        else
+        {
+            return false;
+        }
+    }
+</script>
+<section class="inner-banner" style="height: 300px; background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;">
+    <div class="content">
+        <h1>Traveler WiFi pocket-device provides islandwide WiFi Internet connection!</h1>
+    </div>
+</section>
+<section class="inner-main clearfix">
+    <div class="content  clearfix">
+        <div class="left">
+            <div class="page-nav">
+
+                <a href="@Url.Action("Rental","Loan")"><div class="inner-nav-f"><span class="text">EDIT RENTAL</span></div></a>
+                <a href="@Url.Action("InnerCustomer", "Loan")"><div class="inner-nav"><span class="text">CUSTOMER INFO</span></div></a>
+                @{
+                    if (PublicClass._loanInfo.RentalMode == "Delivery")
+                    {
+                        <a href="@Url.Action("DeliveryPayment", "Loan")"><div class="inner-nav"><span class="text">PAYMENT</span></div></a>
+                        <a href="@Url.Action("DeliveryConfirm", "Loan")"><div class="inner-nav-l"><span class="text">CONFIRM</span></div></a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("SelfPayment", "Loan")"><div class="inner-nav"><span class="text">PAYMENT</span></div></a>
+                        <a href="@Url.Action("SelfConfirm", "Loan")"><div class="inner-nav-l"><span class="text">CONFIRM</span></div></a>
+                    }
+                }
+            </div>
+            <div class="holder">
+                <h1></h1>
+                <h2>Confirmation Code <span style="color:#3f9ed0;">[ @PublicClass._LoanCur.CustomerCode ]</span></h2>
+                <div class="clearfix">
+                    <ul class="bullet-list">
+                        <li><p>An email confirmation of your order will be sent to you shortly.</p></li>
+                        <li><p>One day prior to your device due Date,  an email will be sent to you.</p></li>
+                        <li><p>An email acknowledgment will be sent to you  once we received your return device package. </p></li>
+                    </ul>
+                </div>
+                <h1>Online Orders & Member Benefits</h1>
+                <div class="clearfix">
+                    <ul class="bullet-list">
+                        <li><p>3% discount off your 'Rental Price'.</p></li>
+                        <li><p>Collect and Return device package at any of our conveniently located service counters.</p></li>
+                        <li><p>Collect and Return device package at any of our conveniently located service counters.</p></li>
+                        <li><p>Do not need to re-fill  in customer information for future orders (auto-populated for member's verification and confirmation).</p></li>
+                    </ul>
+                </div>
+                <h1>Not a Member? Membership Registration Below ( Free )</h1>
+                <div class="clearfix">
+@using (Html.BeginForm("DeliveryConfirm", "Loan", FormMethod.Post, new { id = "idDeliveryForm" }))
+{
+                    <table style="float:left;">
+                        <tr><td class="align-right">Username</td><td>
+                                                                     @Html.TextBoxFor(model => model.UserName, new { placeholder = "Username", onblur = "_checkUsername();" })
+</td></tr>
+                        <tr>
+                            <td class="align-right"></td>
+                            <td>
+                                @Html.ValidationMessageFor(m => m.UserName)
+                            </td>
+                        <tr>
+<tr><td class="align-right">Password</td><td>
+    @Html.PasswordFor(model => model.Password, new { placeholder = "Password" })
+</td></tr>
+                        <tr>
+                            <td class="align-right"></td>
+                            <td>
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </td>
+                        <tr>
+<tr><td class="align-right">Re-type Password</td><td>
+    @Html.PasswordFor(model => model.ConfirmPassword, new { placeholder = "Confirm Password" })
+</td></tr>
+                        <tr>
+                            <td class="align-right"></td>
+                            <td>
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                            </td>
+                        <tr>
+<tr><td class="align-right" colspan="2"><input type="button" onclick="_onClickSubmit();" value="Submit" class="submit" style="float:right;margin:0;"></td>                    </tr>
+                    </table>
+}
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="header">Rental Summary <a href="#"><span class="edit">EDIT</span></a></div>
+            <span class="text"><strong>DELIVERY</strong></span>
+            <span class="text"><strong>Device QTY</strong> :   @PublicClass._loanInfo.RentalMode </span>
+            <span class="text"><strong>Collection Location</strong> :  @_DALSite.SelectByID(PublicClass._loanInfo.CollectionLocation).Name </span>
+            <span class="text"><strong>Loan Date</strong>:   @PublicClass._loanInfo.CollectionDate </span>
+            <span class="text"><strong>Return Date</strong>:   @PublicClass._loanInfo.ReturnDate </span>
+            <span class="text"><strong>Return Type</strong>:  @PublicClass._loanInfo.RentalMode</span>
+            <br>
+            <span class="text"><strong>Rental Price</strong>:  SGD @PublicClass._loanInfo.RentalPrice</span>
+            <p style="font-size:12px;margin-left:20px;">[Minimum 3 Days Price Plan]</p>
+            <span class="text"><strong>Online Discount</strong>:  SGD @PublicClass._loanInfo.OnlineDiscount</span>
+            <span class="text"><strong>Delivery</strong>:  SGD @PublicClass._loanInfo.Delivery</span>
+            <span class="text"><strong>Total</strong>:  SGD @PublicClass._loanInfo.Total</span>
+            <span class="text">
+                <strong>
+                    Pre-Authorization Credit Card verification charge <span title="Pre-authorization charge (either full SGD 180, or  partial  SGD30) will only be exercised in the event that the entire device package is not returned on due date, or returned device is damaged or not in its original working order. A SGD 0.50 charge will be incur for verification of  credit card validity; consented for pre-authorization charge.
+" style="color:#f85600;font-size:12px;">[?]</span>
+                </strong>:  SGD 0.50
+            </span>
+            <div class="divider"></div>
+            <span class="text"><strong>Customer Name</strong> : @PublicClass._customerCur.Name </span>
+            @{
+                if (PublicClass._customerCur.Passport != null)
+                {
+                    <span class="text"><strong>Passport Number</strong> :   @PublicClass._customerCur.Passport </span>
+                    <span class="text"><strong>Passport Expiration</strong>:   @PublicClass._customerCur.Expiry_date </span>
+                }
+                else if (PublicClass._customerCur.DrivingLisence != null)
+                {
+                    <span class="text"><strong>Driving Lisence</strong> :   @PublicClass._customerCur.DrivingLisence </span>
+                }
+                else
+                {
+                    <span class="text"><strong>ID Lisence</strong> :   @PublicClass._customerCur.IDLisence </span>
+                }
+            }
+            <span class="text"><strong>Date of Birth</strong>:   @PublicClass._customerCur.DOB </span>
+            <span class="text"><strong>Contact Number</strong>: @PublicClass._customerCur.Phone</span>
+            <span class="text"><strong>Email</strong>: @PublicClass._customerCur.Email</span>
+            <div class="divider"></div>
+        </div>
+    </div>
+</section>
+

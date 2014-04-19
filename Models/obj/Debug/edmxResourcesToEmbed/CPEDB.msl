@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CPEModelStoreContainer" CdmEntityContainer="DBContextCPEDB">
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="CPEModel.Agent">
+        <MappingFragment StoreEntitySet="Agent">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPEs">
+      <EntityTypeMapping TypeName="CPEModel.CPE">
+        <MappingFragment StoreEntitySet="CPE">
+          <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
+          <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
+          <ScalarProperty Name="FromSite" ColumnName="FromSite" />
+          <ScalarProperty Name="CodeTransfer" ColumnName="CodeTransfer" />
+          <ScalarProperty Name="ToSite" ColumnName="ToSite" />
+          <ScalarProperty Name="SIMNo" ColumnName="SIMNo" />
+          <ScalarProperty Name="CPECategory_ID" ColumnName="CPECategory_ID" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPEGlobals">
+      <EntityTypeMapping TypeName="CPEModel.CPEGlobal">
+        <MappingFragment StoreEntitySet="CPEGlobal">
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPELocations">
+      <EntityTypeMapping TypeName="CPEModel.CPELocation">
+        <MappingFragment StoreEntitySet="CPELocation">
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+          <ScalarProperty Name="CPE_ID" ColumnName="CPE_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanDetails">
+      <EntityTypeMapping TypeName="CPEModel.LoanDetail">
+        <MappingFragment StoreEntitySet="LoanDetail">
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="PromotionDisCount" ColumnName="PromotionDisCount" />
+          <ScalarProperty Name="CPE_ID" ColumnName="CPE_ID" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SiteReturn_ID" ColumnName="SiteReturn_ID" />
+          <ScalarProperty Name="SiteLoan_ID" ColumnName="SiteLoan_ID" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="RentAmount" ColumnName="RentAmount" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="LoanDate" ColumnName="LoanDate" />
+          <ScalarProperty Name="PenaltyAmount" ColumnName="PenaltyAmount" />
+          <ScalarProperty Name="RentDay" ColumnName="RentDay" />
+          <ScalarProperty Name="Loan_ID" ColumnName="Loan_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="CPEModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packages">
+      <EntityTypeMapping TypeName="CPEModel.Package">
+        <MappingFragment StoreEntitySet="Package">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="EOM" ColumnName="EOM" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penalties">
+      <EntityTypeMapping TypeName="CPEModel.Penalty">
+        <MappingFragment StoreEntitySet="Penalty">
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="StatusCPE" ColumnName="StatusCPE" />
+          <ScalarProperty Name="Percents" ColumnName="Percents" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promotions">
+      <EntityTypeMapping TypeName="CPEModel.Promotion">
+        <MappingFragment StoreEntitySet="Promotion">
+          <ScalarProperty Name="PromotionCode" ColumnName="PromotionCode" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="CPEModel.Site">
+        <MappingFragment StoreEntitySet="Site">
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="CPEModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackLoans">
+      <EntityTypeMapping TypeName="CPEModel.TrackLoan">
+        <MappingFragment StoreEntitySet="TrackLoan">
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+          <ScalarProperty Name="LoanDetail_ID" ColumnName="LoanDetail_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackLogs">
+      <EntityTypeMapping TypeName="CPEModel.TrackLog">
+        <MappingFragment StoreEntitySet="TrackLog">
+          <ScalarProperty Name="Staff_ID" ColumnName="Staff_ID" />
+          <ScalarProperty Name="TimeAction" ColumnName="TimeAction" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="CPEModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IDLisence" ColumnName="IDLisence" />
+          <ScalarProperty Name="DrivingLisence" ColumnName="DrivingLisence" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Expiry_date" ColumnName="Expiry_date" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loans">
+      <EntityTypeMapping TypeName="CPEModel.Loan">
+        <MappingFragment StoreEntitySet="Loan">
+          <ScalarProperty Name="BookedName" ColumnName="BookedName" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="ExpiredateCreditCard" ColumnName="ExpiredateCreditCard" />
+          <ScalarProperty Name="CreditCardNumer" ColumnName="CreditCardNumer" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="OnlineDiscountCode" ColumnName="OnlineDiscountCode" />
+          <ScalarProperty Name="OnlineDiscount" ColumnName="OnlineDiscount" />
+          <ScalarProperty Name="RentalPrice" ColumnName="RentalPrice" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="LoanSiteID" ColumnName="LoanSiteID" />
+          <ScalarProperty Name="ReturnType" ColumnName="ReturnType" />
+          <ScalarProperty Name="CustomerBarcode" ColumnName="CustomerBarcode" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Staff_ID" ColumnName="Staff_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

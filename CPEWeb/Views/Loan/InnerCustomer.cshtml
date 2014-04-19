@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "InnerCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CPEWeb.Class
+@using DAL.Implement.CPE_vs1DAL
+@model Models.CustomerInfo
+           @{
+               ISitesDAL _DALSite = new SitesDAL();
+               List<SelectListItem> listIDType = new List<SelectListItem>();
+               listIDType.Add(new SelectListItem() { Value = "Passport", Text = "Passport" });
+               listIDType.Add(new SelectListItem() { Value = "DrivingLisence", Text = "Driving Lisence" });
+               listIDType.Add(new SelectListItem() { Value = "IDLisence", Text = "IDLisence" });
+           }
+<script type="text/javascript">
+    function _changeIDType() {
+        var IDType = $('#DrivingLisence').val();
+        if (IDType != 'Passport') {
+            $('#idExpireDate').attr('style', 'display:none;');
+            $('#Expiry_date').val('@DateTime.Now.AddDays(1).Date');
+        }
+        else
+            $('#idExpireDate').attr('style', 'display:no;');
+
+    }
+    $(document).ready(function (){
+        _changeIDType();
+    });
+        
+</script>
+<section class="inner-banner" style="height: 300px; background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;">
+    <div class="content">
+        <h1>TRAVEL THE WAY<br> YOU WANT IT<br> TO BE</h1>
+    </div>
+</section>
+<section class="inner-main clearfix">
+    <div class="content  clearfix">
+        <div class="left">
+            <div class="page-nav">
+
+                <a href="@Url.Action("Rental","Loan")"><div class="inner-nav-f"><span class="text">EDIT RENTAL</span></div></a>
+                <a href="@Url.Action("InnerCustomer", "Loan")"><div class="inner-nav-off"><span class="text">CUSTOMER INFO</span></div></a>
+                @{
+                    if (PublicClass._loanInfo.RentalMode == "Delivery")
+                    {
+                        <a href="@Url.Action("DeliveryPayment", "Loan")"><div class="inner-nav-g"><span class="text">PAYMENT</span></div></a>
+                        <a href="@Url.Action("DeliveryConfirm", "Loan")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("SelfPayment", "Loan")"><div class="inner-nav-g"><span class="text">PAYMENT</span></div></a>
+                        <a href="@Url.Action("SelfConfirm", "Loan")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+                    }
+                }
+            </div>
+            <div class="holder">
+                @using (Html.BeginForm("InnerCustomer", "Loan", FormMethod.Post))
+{
+                    <h1>CUSTOMER <span class="blue">INFO</span></h1>
+
+                    <div class="clearfix">
+
+                        <table style="float:left;">
+                            <tr>
+                                <td class="align-right">Cutomer Name</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Name, new {placeholder="Name", style="width:150px;" })
+                                    @*<input type="text" placeholder="Name" style="width:150px;">*@
+                                    @*<input type="text" placeholder="Last Name" style="width:85px;">*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.Name)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right">Identity Number</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Passport, new { placeholder="630XXXXXXXX", style="border-top-right-radius:0;border-bottom-right-radius:0;width:100px;" })
+                                    @Html.DropDownListFor(model => model.DrivingLisence, listIDType, new { style = "border-top-left-radius:0;border-bottom-left-radius:0; margin-left:-15px;", onchange = "_changeIDType();" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.Passport)
+                                </td>
+                            </tr>
+                            <tr id="idExpireDate">
+                                <td class="align-right">Expire date</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Expiry_date, new { @class = "dateSelect", style = "width: 150px;" })
+                                <td>
+                                    <div class="date-icon" style="right:107px;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.Expiry_date)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right">Nationality</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Nationality, new { placeholder = "Singaporean" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.Nationality)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right">Date of Birth</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.DOB, new { @class = "dateSelect", style = "width: 150px;" })
+                                </td>
+                                <td>
+                                    <div class="date-icon" style="right:107px;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.DOB)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right">Contact Number</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Phone, new { placeholder = "045-XXX-XXXXXXXXXX" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.Phone)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right">Email Address</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Email, new { placeholder = "email@mail.com" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-right"></td>
+                                <td>
+                                    @Html.ValidationMessageFor(m => m.Email)
+                                </td>
+                            </tr>
+                            @*<tr>
+                                <td class="align-right" colspan="2"><input type="submit" value="NEXT" class="submit" style="float:right;margin:0;"></td>                    </tr>*@
+                        </table>
+
+                        <img src="images/customer.png" style="float:right;margin-top: -250px;">
+                    </div>
+                    <br>
+                    <h3>Service Terms and Conditions</h3>
+                    <div class="scrolldiv">
+                        Charges and Deposit <br><br>
+                        1. Daily service rental is charged on full day basis at S$29 for 3 Days minimum price rental, and S$9 per additional day.
+                        <br><br>
+                        2. Daily service rental is charged fully (no pro-rated) even if the device is returned before the due date.
+                        <br><br>
+                        3. There is S$180 security deposit (on pre-authorization hold) for the device rental. The deposit will be refunded fully when the device package is returned undamaged and in good working order. There will be charges deducted from the deposit for lost or damaged device / items:
+                    </div>
+                    <p style="color:#555555; font-size:11px;text-align:center;"><input id="radTerm" type="radio">By clicking submit you agree to the Service Terms & Conditions</p>
+                    <center><input onclick="" type="submit" value="Submit" class="submit" style="float:none"></center>
+}
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="header">
+                Rental Summary
+                @if(PublicClass._customerCur.ID!=0)
+                {
+
+
+                }
+                else
+                {
+                    <a href="@Url.Action("Edit","Home")"><span class="edit">EDIT</span></a>
+                }
+            </div>
+            <span class="text"><strong>SELF COLLECT & RETURN / DELIVERY</strong></span>
+            <span class="text"><strong>Device QTY</strong> :   @PublicClass._loanInfo.RentalMode </span>
+            @if(PublicClass._loanInfo.CollectionLocation!=0)
+            {
+            <span class="text"><strong>Collection Location</strong> :  @_DALSite.SelectByID(PublicClass._loanInfo.CollectionLocation).Name </span>
+            }
+            <span class="text"><strong>Loan Date</strong>:   @PublicClass._loanInfo.CollectionDate </span>
+            <span class="text"><strong>Return Date</strong>:   @PublicClass._loanInfo.ReturnDate </span>
+            <span class="text"><strong>Return Type</strong>:  @PublicClass._loanInfo.RentalMode</span>
+            <br>
+            <span class="text"><strong>Rental Price</strong>:  SGD @PublicClass._loanInfo.RentalPrice</span>
+            <p style="font-size:12px;margin-left:20px;">[Minimum 3 Days Price Plan]</p>
+            <span class="text"><strong>Online Discount</strong>:  SGD @PublicClass._loanInfo.OnlineDiscount</span>
+            <span class="text"><strong>Delivery</strong>:  SGD @PublicClass._loanInfo.Delivery</span>
+            <span class="text"><strong>Total</strong>:  SGD @PublicClass._loanInfo.Total</span>
+            <div class="divider"></div>
+        </div>
+    </div>
+</section>

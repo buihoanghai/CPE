@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "SelfPayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CPEWeb.Class
+@using DAL.Implement.CPE_vs1DAL
+@model Models.Customer
+@{
+    ISitesDAL _DALSite = new SitesDAL();
+}
+<section class="inner-banner" style="height: 300px; background: url(@Url.Content("~/Content/Template/images/slide-1.jpg")) center;">
+    <div class="content">
+        <h1>Traveler WiFi pocket-device provides islandwide WiFi Internet connection!</h1>
+    </div>
+</section>
+<section class="inner-main clearfix">
+    <div class="content  clearfix">
+        <div class="left">
+            <div class="page-nav">
+
+                <a href="@Url.Action("Rental","LoanCPE")"><div class="inner-nav-f"><span class="text">EDIT RENTAL</span></div></a>
+                <a href="@Url.Action("InnerCustomer", "LoanCPE")"><div class="inner-nav"><span class="text">CUSTOMER INFO</span></div></a>
+                @{
+    if (PublicClass._customerCur != null && PublicClass._customerCur.ID != 0)
+    {
+        if (PublicClass._loanInfo.RentalMode == "Delivery")
+        {
+            <a href="@Url.Action("DeliveryPayment", "LoanCPE")"><div class="inner-nav-off"><span class="text">PAYMENT</span></div></a>
+            <a href="@Url.Action("DeliveryConfirmWithLogin", "LoanCPE")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+        }
+        else
+        {
+            <a href="@Url.Action("SelfPayment", "LoanCPE")"><div class="inner-nav-off"><span class="text">PAYMENT</span></div></a>
+            <a href="@Url.Action("SelfConfirmWithLogin", "LoanCPE")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+        }
+    }
+    else
+    {
+        if (PublicClass._loanInfo.RentalMode == "Delivery")
+        {
+            <a href="@Url.Action("DeliveryPayment", "LoanCPE")"><div class="inner-nav-off"><span class="text">PAYMENT</span></div></a>
+            <a href="@Url.Action("DeliveryConfirm", "LoanCPE")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+        }
+        else
+        {
+            <a href="@Url.Action("SelfPayment", "LoanCPE")"><div class="inner-nav-off"><span class="text">PAYMENT</span></div></a>
+            <a href="@Url.Action("SelfConfirm", "LoanCPE")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+        }
+    }
+}
+            </div>
+            <div class="alertbox">
+                <img src="@Url.Content("~/Content/Template/images/alert.png")"><p>  Please ensure your Rental Summary detail (displayed on right) is correct.</p>
+            </div>
+            <div class="holder">
+                <h1><span class="blue">Paypal Payment for Rental Summary Charge</span></h1>
+                <div class="clearfix" style="min-height:200px;">
+                    <button class="left-bt">PayPal A/C</button>
+                    <button class="right-bt">VISA / Master Card</button>
+                    <input type="button" value="Submit" class="submit" style="float:none;margin:0;">
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="header">Rental Summary <a href="#"><span class="edit">EDIT</span></a></div>
+            <span class="text"><strong>SELF COLLECT & RETURN</strong></span>
+            <span class="text"><strong>Device QTY</strong> :   @PublicClass._loanInfo.RentalMode </span>
+            @if (PublicClass._loanInfo.CollectionLocation != 0)
+{
+    <span class="text"><strong>Collection Location</strong> :  @_DALSite.SelectByID(PublicClass._loanInfo.CollectionLocation).Name </span>
+}
+            <span class="text"><strong>Loan Date</strong>:   @PublicClass._loanInfo.CollectionDate </span>
+            <span class="text"><strong>Return Date</strong>:   @PublicClass._loanInfo.ReturnDate </span>
+            <span class="text"><strong>Return Type</strong>:  @PublicClass._loanInfo.RentalMode</span>
+            <br>
+            <span class="text"><strong>Rental Price</strong>:  SGD @PublicClass._loanInfo.RentalPrice</span>
+            <p style="font-size:12px;margin-left:20px;">[Minimum 3 Days Price Plan]</p>
+            <span class="text"><strong>Online Discount</strong>:  SGD @PublicClass._loanInfo.OnlineDiscount</span>
+            <span class="text"><strong>Delivery</strong>:  SGD @PublicClass._loanInfo.Delivery</span>
+            <span class="text"><strong>Total</strong>:  SGD @PublicClass._loanInfo.Total</span>
+            <div class="divider"></div>
+            <span class="text"><strong>Customer Name</strong> : @PublicClass._customerCur.Name </span>
+            @{
+                if (PublicClass._customerCur.Passport != null)
+                {
+                    <span class="text"><strong>Passport Number</strong> :   @PublicClass._customerCur.Passport </span>
+                    <span class="text"><strong>Passport Expiration</strong>:   @PublicClass._customerCur.Expiry_date </span>
+                }
+                else if (PublicClass._customerCur.DrivingLisence != null)
+                {
+                    <span class="text"><strong>Driving Lisence</strong> :   @PublicClass._customerCur.DrivingLisence </span>
+                }
+                else
+                {
+                    <span class="text"><strong>ID Lisence</strong> :   @PublicClass._customerCur.IDLisence </span>
+                }
+            }
+            <span class="text"><strong>Date of Birth</strong>:   @PublicClass._customerCur.DOB </span>
+            <span class="text"><strong>Contact Number</strong>: @PublicClass._customerCur.Phone</span>
+            <span class="text"><strong>Email</strong>: @PublicClass._customerCur.Email</span>
+            <div class="divider"></div>
+        </div>
+    </div>
+</section>

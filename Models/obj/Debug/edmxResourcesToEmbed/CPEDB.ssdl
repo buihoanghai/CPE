@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CPEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barcode" Type="varchar" MaxLength="50" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="CPECategory_ID" Type="int" />
+    <Property Name="SIMNo" Type="varchar" MaxLength="50" />
+    <Property Name="ToSite" Type="int" />
+    <Property Name="CodeTransfer" Type="varchar" MaxLength="20" />
+    <Property Name="FromSite" Type="int" />
+    <Property Name="CheckOutDate" Type="datetime" />
+    <Property Name="CheckInDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPEGlobal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="real" />
+    <Property Name="Deposit" Type="real" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPELocation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPE_ID" Type="int" />
+    <Property Name="Location_ID" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Modified_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Passport" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Expiry_date" Type="datetime" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="DrivingLisence" Type="varchar" MaxLength="50" />
+    <Property Name="IDLisence" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Loan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_ID" Type="int" />
+    <Property Name="Staff_ID" Type="int" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="CustomerCode" Type="varchar" MaxLength="20" />
+    <Property Name="CustomerBarcode" Type="varchar" MaxLength="20" />
+    <Property Name="ReturnType" Type="varchar" MaxLength="50" />
+    <Property Name="LoanSiteID" Type="int" />
+    <Property Name="Delivery" Type="real" />
+    <Property Name="DeliveryAddress" Type="varchar" MaxLength="100" />
+    <Property Name="RentalPrice" Type="real" />
+    <Property Name="OnlineDiscount" Type="real" />
+    <Property Name="OnlineDiscountCode" Type="varchar" MaxLength="50" />
+    <Property Name="SubTotal" Type="real" />
+    <Property Name="CreditCardNumer" Type="varchar" MaxLength="50" />
+    <Property Name="ExpiredateCreditCard" Type="datetime" />
+    <Property Name="NameOnCard" Type="varchar" MaxLength="50" />
+    <Property Name="BookedName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoanDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loan_ID" Type="int" />
+    <Property Name="RentDay" Type="int" />
+    <Property Name="PenaltyAmount" Type="real" />
+    <Property Name="LoanDate" Type="datetime" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="RentAmount" Type="real" />
+    <Property Name="Deposit" Type="real" />
+    <Property Name="SiteLoan_ID" Type="int" />
+    <Property Name="SiteReturn_ID" Type="int" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="CPE_ID" Type="int" />
+    <Property Name="PromotionDisCount" Type="int" />
+    <Property Name="AgentCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Days" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="EOM" Type="tinyint" />
+    <Property Name="Price" Type="real" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Penalty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="real" />
+    <Property Name="Percents" Type="int" />
+    <Property Name="StatusCPE" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Modified_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Promotion">
+    <Key>
+      <PropertyRef Name="PromotionCode" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PromotionName" Type="varchar" MaxLength="50" />
+    <Property Name="Discount" Type="int" />
+    <Property Name="PromotionCode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Created" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Sex" Type="tinyint" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountType" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Modified_By" Type="int" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TrackLoan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanDetail_ID" Type="int" />
+    <Property Name="Package_ID" Type="int" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Created_By" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Modified_By" Type="int" />
+  </EntityType>
+  <EntityType Name="TrackLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Action" Type="ntext" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeAction" Type="datetime" />
+    <Property Name="Staff_ID" Type="int" />
+  </EntityType>
+  <Association Name="FK_LoanDetail_Loan">
+    <End Role="Loan" Type="Self.Loan" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LoanDetail" Type="Self.LoanDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoanDetail">
+        <PropertyRef Name="Loan_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CPEModelStoreContainer">
+    <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPE" EntityType="Self.CPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPEGlobal" EntityType="Self.CPEGlobal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPELocation" EntityType="Self.CPELocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loan" EntityType="Self.Loan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanDetail" EntityType="Self.LoanDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Penalty" EntityType="Self.Penalty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promotion" EntityType="Self.Promotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrackLoan" EntityType="Self.TrackLoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrackLog" EntityType="Self.TrackLog" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_LoanDetail_Loan" Association="Self.FK_LoanDetail_Loan">
+      <End Role="Loan" EntitySet="Loan" />
+      <End Role="LoanDetail" EntitySet="LoanDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

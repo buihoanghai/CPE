@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Rental";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CPEWeb.Class
+@using DAL.Implement.CPE_vs1DAL
+@model Models.Register
+@{
+    ISitesDAL _DALSite = new SitesDAL();
+}
+<section class="inner-banner" style="height:300px;background:url(images/slide-1.jpg) center;">
+    <div class="content">
+        <h1>Traveler WiFi pocket-device provides islandwide WiFi Internet connection!</h1>
+    </div>
+</section>
+<section class="inner-main clearfix">
+    <div class="content  clearfix">
+        <div class="left">
+            <div class="page-nav">
+                <a href="@Url.Action("Rental","Loan")"><div class="inner-nav-b-f"><span class="text">EDIT RENTAL</span></div></a>
+                <a href="@Url.Action("InnerCustomer", "Loan")"><div class="inner-nav-g"><span class="text">CUSTOMER INFO</span></div></a>
+                @{
+                if (PublicClass._loanInfo.RentalMode == "Delivery"){
+                <a href="@Url.Action("DeliveryPayment", "Loan")"><div class="inner-nav-g"><span class="text">PAYMENT</span></div></a>
+                    <a href="@Url.Action("DeliveryConfirm", "Loan")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+                }
+                else { 
+                <a href="@Url.Action("SelfPayment", "Loan")"><div class="inner-nav-g"><span class="text">PAYMENT</span></div></a>
+                    <a href="@Url.Action("SelfConfirm", "Loan")"><div class="inner-nav-l-off"><span class="text">CONFIRM</span></div></a>
+                }
+                }
+                
+            </div>
+
+        </div>
+        <div class="sidebar">
+            <div class="header">Rental Summary <a href="#"><span class="edit">EDIT</span></a></div>
+            <span class="text"><strong>Device QTY</strong> :   @PublicClass._loanInfo.RentalMode </span>
+            <span class="text"><strong>Collection Location</strong> :  @_DALSite.SelectByID(PublicClass._loanInfo.CollectionLocation).Name </span>
+            <span class="text"><strong>Loan Date</strong>:   @PublicClass._loanInfo.CollectionDate </span>
+            <span class="text"><strong>Return Date</strong>:   @PublicClass._loanInfo.ReturnDate </span>
+            <span class="text"><strong>Return Type</strong>:  @PublicClass._loanInfo.RentalMode</span>
+            <div class="divider"></div>
+            <span class="text"><strong>Customer Name</strong> : @PublicClass._customerCur.Name </span>
+            @{
+                if (PublicClass._customerCur.Passport != null)
+                {
+                    <span class="text"><strong>Passport Number</strong> :   @PublicClass._customerCur.Passport </span>
+                    <span class="text"><strong>Passport Expiration</strong>:   @PublicClass._customerCur.Expiry_date </span>
+                }
+                else if (PublicClass._customerCur.DrivingLisence != null)
+                {
+                    <span class="text"><strong>Driving Lisence</strong> :   @PublicClass._customerCur.DrivingLisence </span>
+                }
+                else
+                {
+                    <span class="text"><strong>ID Lisence</strong> :   @PublicClass._customerCur.IDLisence </span>
+                }
+            }
+            <span class="text"><strong>Date of Birth</strong>:   @PublicClass._customerCur.DOB </span>
+            <span class="text"><strong>Contact Number</strong>: @PublicClass._customerCur.Phone</span>
+            <span class="text"><strong>Email</strong>: @PublicClass._customerCur.Email</span>
+            <div class="divider"></div>
+        </div>
+    </div>
+</section>
